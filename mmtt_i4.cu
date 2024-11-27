@@ -25,14 +25,14 @@ __global__ void mmtt_i4(const float *A, const float *B, float *C, int ds) {
         float sum3 = 0.0;
         for (int k = 0; k < ds; ++k) {
             sum0 += A[i + ds*k] * B[k + ds*j];
-            sum1 += A[(i+blockIdx.x) + ds*k] * B[k + ds*j];
-            sum2 += A[(i+blockIdx.x+blockIdx.x) + ds*k] * B[k + ds*j];
-            sum3 += A[(i+blockIdx.x+blockIdx.x+blockIdx.x) + ds*k] * B[k + ds*j];
+            sum1 += A[(i + blockIdx.x) + ds*k] * B[k + ds*j];
+            sum2 += A[(i + blockIdx.x + blockIdx.x) + ds*k] * B[k + ds*j];
+            sum3 += A[(i + blockIdx.x + blockIdx.x + blockIdx.x) + ds*k] * B[k + ds*j];
         }
         C[i * ds + j] = sum0;
-        C[(i+blockIdx.x) * ds + j] = sum1;
-        C[(i+blockIdx.x+blockIdx.x) * ds + j] = sum2;
-        C[(i+blockIdx.x+blockIdx.x+blockIdx.x) * ds + j] = sum3;
+        C[(i + blockIdx.x) * ds + j] = sum1;
+        C[(i + blockIdx.x + blockIdx.x) * ds + j] = sum2;
+        C[(i + blockIdx.x + blockIdx.x + blockIdx.x) * ds + j] = sum3;
     }
 }
 
