@@ -17,7 +17,7 @@ nvcc -O3 -o mmtt_i4 mmtt_i4.cu
 nvcc -O3 -o mmtt_j4 mmtt_j4.cu
 ./mmtt_j4
 
-nvcc -O3 -o mmt_i4j4 t mmtt_i4j4.cu
+nvcc -O3 -o mmt_i4j4 mmtt_i4j4.cu
 ./mmtt_i4j4
 
 nvcc -O3 -o mmtt_sm mmtt_sm.cu
