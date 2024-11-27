@@ -1,0 +1,24 @@
+module load cuda
+nvcc --version
+nvidia-smi
+
+nvcc -O3 -o mmtt mmtt.cu
+./mmtt
+
+nvcc -O3 -o mmttrev mmttrev.cu
+./mmttrev
+
+nvcc -O3 -o mmtt_k4 mmtt_k4.cu
+./mmtt_k4
+
+nvcc -O3 -o mmtt_i4 mmtt_i4.cu
+./mmtt_i4
+
+nvcc -O3 -o mmtt_j4 mmtt_j4.cu
+./mmtt_j4
+
+nvcc -O3 -o mmt_i4j4 t mmtt_i4j4.cu
+./mmtt_i4j4
+
+nvcc -O3 -o mmtt_sm mmtt_sm.cu
+./mmtt_sm
